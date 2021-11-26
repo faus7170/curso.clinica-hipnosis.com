@@ -18,7 +18,7 @@ class Curso extends Component {
             )
     }
 }
-}
+
 export default Curso;
 if (document.getElementById('curso')) {
     ReactDOM.render(<Curso />, document.getElementById('curso'));
