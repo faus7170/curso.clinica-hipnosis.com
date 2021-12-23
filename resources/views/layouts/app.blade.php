@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>{{ config('app.name', 'Clinica Hipnosis') }}</title>
+        <title>{{ config('app.name', 'Cursos') }}</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset(config('app.template','').'/vendors/feather/feather.css') }}">
     <link rel="stylesheet" href="{{ asset(config('app.template','').'/vendors/ti-icons/css/themify-icons.css') }}">
@@ -21,24 +21,6 @@
     <link rel="stylesheet" href="{{ asset(config('app.template','').'/css/vertical-layout-light/style.css') }}">
     <!-- endinject -->
     <link rel="shortcut icon" href="{{ asset(config('app.template','').'/images/favicon.png') }}" />
-    @if(auth()->user())
-    <script>
-        window.user = {
-            id: {{ auth()->id() }},
-        name: "{{ auth()->user()->name }}",
-            canal: "{{Auth::user()->canal}}",
-        @if(Auth::user()->hasRole('admin'))
-        rol: 1
-        @else
-        rol: 0
-        @endif
-        };
-
-        window.csrfToken = "{{ csrf_token() }}";
-    </script>
-    @endif
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-    <script src="https://ckeditor.com/apps/ckfinder/3.5.0/ckfinder.js"></script>
 </head>
 <body>
 <div class="container-scroller">
@@ -327,15 +309,14 @@
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                 <i class="icon-layout menu-icon"></i>
-                <span class="menu-title">Cursos</span>
+                <span class="menu-title">UI Elements</span>
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="{{url('curso/miscursos')}}">Mis Cursos</a></li>
-                </ul>
-                <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="{{url('curso/')}}">Cursos</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
                 </ul>
             </div>
         </li>
@@ -351,7 +332,7 @@
                 </ul>
             </div>
         </li>
-        <!--<li class="nav-item">
+        <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
                 <i class="icon-bar-graph menu-icon"></i>
                 <span class="menu-title">Charts</span>
@@ -418,7 +399,7 @@
                 <i class="icon-paper menu-icon"></i>
                 <span class="menu-title">Documentation</span>
             </a>
-        </li>-->
+        </li>
     </ul>
 </nav>
 <!-- partial -->
